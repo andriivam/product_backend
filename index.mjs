@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://products-list-and.netlify.app');
   next();
 });
-app.use(cors({origin: ['https://products-list-and.netlify.app/', 'http://localhost:3001', 'http://localhost:3000']}));
+app.use(cors({origin: ['https://products-list-and.netlify.app/', 'https://product-list-backend.herokuapp.com/', 'http://localhost:3001', 'http://localhost:3000']}));
 
 const PORT = process.env.PORT;
 
