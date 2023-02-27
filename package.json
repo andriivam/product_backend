@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "19.2.0",
+    "npm": "8.19.3"
+  },
   "scripts": {
     "dev": "nodemon index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"

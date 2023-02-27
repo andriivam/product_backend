@@ -12,17 +12,11 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({origin: ['http://localhost:3000', 'http://localhost:3001']}));
-
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://products-list-and.netlify.app');
+  next();
+});
+app.use(cors({origin: ['https://products-list-and.netlify.app/', 'http://localhost:3001', 'http://localhost:3000']}));
 
 const PORT = process.env.PORT;
 
@@ -39,5 +33,5 @@ app.delete('/productsList', deleteProducts);
 
 
 
-app.listen(process.env.PORT, () => console.log(`Server started: localhost ${PORT}`))
+app.listen(process.env.PORT || 3005, () => console.log(`Server started: localhost ${PORT}`))
 
