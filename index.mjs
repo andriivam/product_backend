@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 })
 
 // getting all products in our list
-app.get('/products_list', getAllProducts);
+app.get('/productsList', getAllProducts);
 // adding new product
 app.post('/addProduct', addNewProduct);
 // delete products
